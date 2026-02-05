@@ -1,14 +1,32 @@
 package rvt;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class TodoList {
+
     private ArrayList<String> tasks;
+    private final String filePath ="data/todo.csv";
 
     // Constructor: Initializes the list
     public TodoList() {
         this.tasks = new ArrayList<>();
     }
+
+    public void loadFromFile(){
+        try (Scanner reader = new Scanner(new File(filePath))){
+            reader.nextLine();
+            while (reader.hasNextLine()){
+                System.out.println(reader.nextLine());
+            }
+        } catch (FileNotFoundException e){
+            System.out.println("Error: " + e.getMessage());
+        } 
+    }
+
+    
 
     // Adds a task to the list
     public void add(String task) {

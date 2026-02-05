@@ -2,6 +2,8 @@ package rvt;
 
 public class App {
     public static void main(String[] args) {
-        // Your code goes here...
+        TodoList todo = new TodoList();
+        todo.loadFromFile();    
+
     }
 }
