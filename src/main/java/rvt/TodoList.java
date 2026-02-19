@@ -90,17 +90,57 @@ public class TodoList {
         }
         return lastId;
     }
+    // Pievienot updateFile() metodi
+    // kura atjauno/pārraksta .csv failu ar jauniem datiem
+    // izmantojos esošo tasks ArrayList masīvu
+    public void updateFile() {
+        try (PrintWriter writer = new PrintWriter(new File(filePath))) {
+            // Write header
+            writer.println("id,task");
+            // Write tasks with their ids
+            for (int i = 0; i < tasks.size(); i++) {
+                int id = i + 1; // id starts from 1
+                writer.println(id + "," + tasks.get(i));
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+    /*
+    Izmantojot RegEx - pārbaudīt lai aktivitāte saturētu tikai burtus, ciparus un atstarpes
+    Aktivitātes garums - min, 3 simbolu (.length() metode)
+    */
+   public boolean checkEventString(String value) {
+        // Simple, easy-to-read validation:
+        // 1) treat null as empty
+        // 2) trim surrounding whitespace
+        // 3) require at least 3 characters
+        // 4) allow only letters, digits and spaces
+        if (value == null) {
+            value = "";
+        }
+
+        // remove leading/trailing spaces
+        value = value.trim();
+
+        // too short -> invalid
+        if (value.length() < 3) {
+            System.out.println("Event is not valid"); // print not valid
+            return false;
+        }
+
+        // check each character is a letter, digit or space
+        for (int i = 0; i < value.length(); i++) {
+            char c = value.charAt(i);
+            if (!(Character.isLetterOrDigit(c) || Character.isSpaceChar(c))) {
+                System.out.println("Event is not valid (" + i+ ")"); // print not valid
+                return false;
+            }
+        }
+
+        // all checks passed
+        System.out.println("Event is valid"); // print valid
+        return true;
+    }
 }
 
-// TodoList list = new TodoList();
-// list.add("read the course material");
-// list.add("watch the latest fool us");
-// list.add("take it easy");
-// list.print();
-// list.remove(2);
-// list.print();
-// list.add("buy raisins");
-// list.print();
-// list.remove(1);
-// list.remove(1);
-// list.print();
