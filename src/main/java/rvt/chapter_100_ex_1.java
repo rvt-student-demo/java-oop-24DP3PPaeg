@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class chapter_100_ex_1 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        System.out.println("āčēģīķļšūž" );
 
         while (true) {
             System.out.print("Enter the numerator: ");
