@@ -1,0 +1,28 @@
+<kursi>
+    <kurss id="K001">
+        <nosaukums>Programmēšana</nosaukums>
+        <apraksts>Iemācies programmēšanus pamatus dažādās valodās kā python, java u.c.</apraksts>
+        <pasniedzējs>Jānis Bērziņš</pasniedzējs>
+        <stundas>120</stundas>
+        <studentu_skaits>25</studentu_skaits>
+        <līmenis>iesācēji</līmenis>
+    </kurss>
+
+    <kurss id="K002">
+        <nosaukums>Speciālās nodaļas matemātikā</nosaukums>
+        <apraksts>Iemācies augstāko matemātiku, domāta vairāk priekš programmētājiem.</apraksts>
+        <pasniedzējs>Ilze Ozola</pasniedzējs>
+        <stundas>60</stundas>
+        <studentu_skaits>18</studentu_skaits>
+        <līmenis>vidējs</līmenis>
+    </kurss>
+
+    <kurss id="K003">
+        <nosaukums>Fullstack programma</nosaukums>
+        <apraksts>Izveido pats savu Fullstack programmatūru(stundu laikā ir pieejams arī skolotājs, kas palīdzēs)</apraksts>
+        <pasniedzējs>Juris Kalniņš</pasniedzējs>
+        <stundas>80</stundas>
+        <studentu_skaits>9</studentu_skaits>
+        <līmenis>profesionāls</līmenis>
+    </kurss>
+</kursi>
